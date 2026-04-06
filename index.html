@@ -67,33 +67,40 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 12px 28px;
             font-weight: 600;
-            border-radius: var(--border-radius-sm);
+            border-radius: 8px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.2s ease-in-out;
+            transition: all 0.25s ease;
             font-size: 1rem;
             border: none;
+            gap: 8px;
         }
 
         .btn-navy {
             background-color: var(--navy);
-            color: var(--white);
+            color: var(--white) !important;
         }
 
         .btn-navy:hover {
-            background-color: #122136;
+            background-color: #243b5e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 46, 74, 0.15);
         }
 
         .btn-teal {
             background-color: var(--teal);
-            color: var(--white);
+            color: var(--white) !important;
         }
 
         .btn-teal:hover {
-            background-color: #125e54;
+            background-color: #218c7e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 122, 110, 0.15);
         }
 
         header {
@@ -211,12 +218,10 @@
             border-radius: 20px;
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.15);
         }
 
         .service-card__image {
@@ -224,6 +229,9 @@
             aspect-ratio: 4 / 3;
             object-fit: cover;
             display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
         }
 
         .service-card__content {
@@ -267,19 +275,23 @@
         }
 
         .service-card__btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             padding: 10px 24px;
             background: #1E6875;
             color: #fff;
             text-decoration: none;
-            border-radius: 40px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.9rem;
-            transition: background 0.2s;
+            transition: all 0.25s ease;
+            gap: 8px;
         }
 
         .service-card__btn:hover {
-            background: #0f4f5a;
+            background: #277b8a;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(30, 104, 117, 0.2);
         }
 
         .about {
@@ -327,6 +339,23 @@
             color: var(--text-light);
         }
 
+        .feature-icon {
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 64px;
+            height: 64px;
+            background: rgba(26, 122, 110, 0.08);
+            border-radius: 12px;
+            color: var(--teal);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
         .cis-section {
             background-color: white;
             padding: 80px 0;
@@ -365,6 +394,9 @@
             object-fit: cover;
             border-radius: 12px;
             display: block;
+            border: none;
+            outline: none;
+            box-shadow: none;
         }
 
         .tax-compliance-content {
@@ -384,17 +416,23 @@
         .tax-compliance-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             margin-top: 8px;
             padding: 14px 28px;
             background-color: #2a7f8f;
             color: #ffffff;
-            border-radius: 6px;
+            border-radius: 8px;
             font-size: 1rem;
             font-weight: 600;
             text-decoration: none;
             align-self: flex-start;
-            transition: background-color 0.2s ease;
+            transition: all 0.25s ease;
+        }
+
+        .tax-compliance-btn:hover {
+            background-color: #35a0b3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(42, 127, 143, 0.2);
         }
 
         footer {
@@ -408,6 +446,7 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 24px;
             }
+
             .features-inner {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -417,45 +456,55 @@
             .services {
                 padding: 60px 20px;
             }
+
             .services__grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
+
             .hero-container {
                 flex-direction: column;
                 gap: 32px;
             }
+
             .about-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
             }
+
             .features-inner {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
             .cis-inner {
                 grid-template-columns: 1fr;
                 gap: 36px;
                 padding: 0 20px;
             }
+
             .tax-compliance-inner {
                 grid-template-columns: 1fr;
                 gap: 36px;
                 padding: 0 20px;
             }
+
             .nav-container {
                 flex-direction: column;
                 gap: 16px;
                 text-align: center;
             }
+
             .nav-links {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 16px;
             }
+
             .hero-content h1 {
                 font-size: 2.25rem !important;
             }
+
             .tax-compliance-heading {
                 font-size: 2.25rem !important;
             }
@@ -485,21 +534,53 @@
             <div class="container hero-container">
                 <div class="hero-content">
                     <div
-                        style="background: var(--navy); color: white; display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px;">
-                        Luton's Proactive Accountants | ⭐ 5-Star Rated | 🏆 CIS Specialists
+                        style="background: var(--navy); color: white; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px;">
+                        <span>Luton's Proactive Accountants</span>
+                        <span style="opacity: 0.3;">|</span>
+                        <span style="display: flex; align-items: center; gap: 4px; color: #f6ad55;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="currentColor" stroke="none">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            5-Star Rated
+                        </span>
+                        <span style="opacity: 0.3;">|</span>
+                        <span style="display: flex; align-items: center; gap: 4px; color: #f6e05e;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                            </svg>
+                            CIS Specialists
+                        </span>
                     </div>
                     <h1>Proactive Accounting for Your Business Success</h1>
-                    <p>Unlike traditional high street accountants, we believe in adding value to your business by being proactive and forward-looking. Free unlimited phone & email support for all clients.</p>
+                    <p>Unlike traditional high street accountants, we believe in adding value to your business by being
+                        proactive and forward-looking. Free unlimited phone & email support for all clients.</p>
                     <a href="#contact" class="btn btn-teal">Get a Free Consultation</a>
                     <div class="hero-trust">
                         <span style="color: #f6ad55;">★★★★★</span>
                         <span>5-Star Rated on Google & Yell</span>
-                        <span class="badge">📞 Free Unlimited Support</span>
+                        <span class="badge" style="display: flex; align-items: center; gap: 6px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            Free Unlimited Support
+                        </span>
                     </div>
                 </div>
                 <div style="flex: 1;">
                     <img src="about-team.jpg" alt="K & M Accountants team"
-                        style="width: 100%; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"
+                        style="width: 100%; border-radius: 16px; border: none; outline: none; box-shadow: none;"
                         onerror="this.src='https://placehold.co/800x600/1a7a6e/white?text=K+%26+M+Accountants'">
                 </div>
             </div>
@@ -509,55 +590,93 @@
         <section id="services" class="services">
             <div class="services__grid">
                 <div class="service-card">
-                    <img class="service-card__image" src="accounting_bookkeeping_img_1775123014583.jpg" alt="Limited Company Accounts">
+                    <img class="service-card__image" src="accounting_bookkeeping_img_1775123014583.jpg"
+                        alt="Limited Company Accounts">
                     <div class="service-card__content">
                         <h2 class="service-card__title">Limited Company Accounts</h2>
-                        <p class="service-card__description">Statutory accounts filed to Companies House and HMRC, with proactive advice to help your business grow.</p>
+                        <p class="service-card__description">Statutory accounts filed to Companies House and HMRC, with
+                            proactive advice to help your business grow.</p>
                         <ul class="service-card__list">
                             <li>Statutory accounts filing</li>
                             <li>Companies House compliance</li>
                             <li>Proactive growth advice</li>
                         </ul>
-                        <a href="#" class="service-card__btn">View More →</a>
+                        <a href="#" class="service-card__btn">
+                            View More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="service-card">
-                    <img class="service-card__image" src="financial_advisory_img_1775123453811.jpg" alt="Sole Trader Accounts">
+                    <img class="service-card__image" src="financial_advisory_img_1775123453811.jpg"
+                        alt="Sole Trader Accounts">
                     <div class="service-card__content">
                         <h2 class="service-card__title">Sole Trader Accounts</h2>
-                        <p class="service-card__description">Personal tax returns and self-assessment with proactive deadline reminders via text, WhatsApp and email.</p>
+                        <p class="service-card__description">Personal tax returns and self-assessment with proactive
+                            deadline reminders via text, WhatsApp and email.</p>
                         <ul class="service-card__list">
                             <li>Self Assessment filing</li>
                             <li>Deadline reminders</li>
                             <li>Tax efficiency advice</li>
                         </ul>
-                        <a href="#" class="service-card__btn">View More →</a>
+                        <a href="#" class="service-card__btn">
+                            View More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="service-card">
                     <img class="service-card__image" src="tax-compliance.jpg" alt="Bookkeeping Services">
                     <div class="service-card__content">
                         <h2 class="service-card__title">Bookkeeping Services</h2>
-                        <p class="service-card__description">Tailor-made bookkeeping at your premises or ours, fully trained on all major software platforms.</p>
+                        <p class="service-card__description">Tailor-made bookkeeping at your premises or ours, fully
+                            trained on all major software platforms.</p>
                         <ul class="service-card__list">
                             <li>On-site or remote bookkeeping</li>
                             <li>All major software platforms</li>
                             <li>Monthly management accounts</li>
                         </ul>
-                        <a href="#" class="service-card__btn">View More →</a>
+                        <a href="#" class="service-card__btn">
+                            View More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
                 <div class="service-card">
                     <img class="service-card__image" src="about-team.jpg" alt="Payroll & CIS Services">
                     <div class="service-card__content">
                         <h2 class="service-card__title">Payroll & CIS Services</h2>
-                        <p class="service-card__description">Construction Industry Scheme specialists — fast CIS refunds and VAT reverse charge advice.</p>
+                        <p class="service-card__description">Construction Industry Scheme specialists — fast CIS refunds
+                            and VAT reverse charge advice.</p>
                         <ul class="service-card__list">
                             <li>CIS tax refunds</li>
                             <li>VAT reverse charge advice</li>
                             <li>Payroll management</li>
                         </ul>
-                        <a href="#" class="service-card__btn">View More →</a>
+                        <a href="#" class="service-card__btn">
+                            View More
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -567,17 +686,23 @@
             <div class="container about-grid">
                 <div>
                     <img src="pexels-mike-alviza-205954711-11668001.jpg" alt="K & M Accountants team"
-                        style="width: 100%; height: 600px; object-fit: cover; object-position: top; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                        style="width: 100%; height: 600px; object-fit: cover; object-position: top; border-radius: 16px; border: none; outline: none; box-shadow: none;">
                 </div>
                 <div>
-                    <h2 style="font-size: 2.25rem; color: var(--navy); margin-bottom: 24px;">Our mission is simply your success</h2>
-                    <p>Led by <strong>Naveen Sehrish</strong>, K & M Accountants is a modern firm of professional accountants based in Luton. We believe that accountancy is not just about numbers — it's about adding value to your business by being proactive and forward-looking.</p>
-                    <p style="margin-top: 20px;">We work together with our clients, providing up-to-date financial and non-financial information so you can plan ahead for future growth and success.</p>
+                    <h2 style="font-size: 2.25rem; color: var(--navy); margin-bottom: 24px;">Our mission is simply your
+                        success</h2>
+                    <p>Led by <strong>Naveen Sehrish</strong>, K & M Accountants is a modern firm of professional
+                        accountants based in Luton. We believe that accountancy is not just about numbers — it's about
+                        adding value to your business by being proactive and forward-looking.</p>
+                    <p style="margin-top: 20px;">We work together with our clients, providing up-to-date financial and
+                        non-financial information so you can plan ahead for future growth and success.</p>
                     <ul style="list-style: none; margin-top: 24px;">
                         <li style="margin-bottom: 12px; font-weight: 500;">✓ Free unlimited phone & email support</li>
                         <li style="margin-bottom: 12px; font-weight: 500;">✓ Fixed fees for 2 years — no surprises</li>
-                        <li style="margin-bottom: 12px; font-weight: 500;">✓ Flexible hours — weekend & evening meetings</li>
-                        <li style="margin-bottom: 12px; font-weight: 500;">✓ Free business record collection locally</li>
+                        <li style="margin-bottom: 12px; font-weight: 500;">✓ Flexible hours — weekend & evening meetings
+                        </li>
+                        <li style="margin-bottom: 12px; font-weight: 500;">✓ Free business record collection locally
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -587,19 +712,52 @@
         <div class="features-section">
             <div class="features-inner">
                 <div class="feature-box">
-                    <h3>📞 Free Unlimited Support</h3>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                    </div>
+                    <h3>Free Unlimited Support</h3>
                     <p>Free phone & email advice for all clients</p>
                 </div>
                 <div class="feature-box">
-                    <h3>💰 Fixed Fees for 2 Years</h3>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="12" x="2" y="6" rx="2" />
+                            <circle cx="12" cy="12" r="2" />
+                            <path d="M6 12h.01M18 12h.01" />
+                        </svg>
+                    </div>
+                    <h3>Fixed Fees for 2 Years</h3>
                     <p>No surprises — pay monthly by standing order</p>
                 </div>
                 <div class="feature-box">
-                    <h3>🕒 Flexible Hours</h3>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>Flexible Hours</h3>
                     <p>Weekend & evening meetings available</p>
                 </div>
                 <div class="feature-box">
-                    <h3>🚚 Free Record Collection</h3>
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                            <path d="M15 18H9" />
+                            <path d="M19 18h2a1 1 0 0 0 1-1v-5h-4v5a1 1 0 0 0 1 1Z" />
+                            <path d="M16 8h3.3a2 2 0 0 1 1.6.8l2.2 3.2" />
+                            <circle cx="7" cy="18" r="2" />
+                            <circle cx="18" cy="18" r="2" />
+                        </svg>
+                    </div>
+                    <h3>Free Record Collection</h3>
                     <p>We collect your business records locally</p>
                 </div>
             </div>
@@ -610,16 +768,22 @@
             <div class="cis-inner">
                 <div>
                     <h2 style="font-size: 2.5rem; color: var(--navy); margin-bottom: 24px;">CIS & MTD Specialists</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 24px;">Working in construction? Need help with VAT reverse charge or Making Tax Digital?</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 24px;">Working in construction? Need help with VAT
+                        reverse charge or Making Tax Digital?</p>
                     <ul style="list-style: none;">
-                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ CIS tax refunds — fast turnaround</li>
-                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ VAT reverse charge advice for construction</li>
-                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ MTD for ITSA — free advice for sole traders</li>
-                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ 2-week turnaround on accounts</li>
+                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ CIS tax refunds —
+                            fast turnaround</li>
+                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ VAT reverse charge
+                            advice for construction</li>
+                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ MTD for ITSA — free
+                            advice for sole traders</li>
+                        <li style="margin-bottom: 12px; padding-left: 28px; position: relative;">✓ 2-week turnaround on
+                            accounts</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="tax-compliance.jpg" alt="CIS & MTD Specialists" style="width: 100%; border-radius: 16px; box-shadow: var(--shadow-subtle);">
+                <div style="border-radius: 16px; overflow: hidden;">
+                    <img src="tax-compliance.jpg" alt="CIS & MTD Specialists"
+                        style="width: 100%; transform: scale(1.08); transform-origin: 0 100%; border: none; outline: none; box-shadow: none;">
                 </div>
             </div>
         </div>
@@ -633,7 +797,8 @@
                     </div>
                     <h2 class="tax-compliance-heading" style="font-size: 3rem; line-height: 1.1;">
                         Ready to work with <span
-                            style="font-family: Georgia, serif; font-style: italic; color: #2a7f8f; font-weight: 500;">Luton's proactive</span>
+                            style="font-family: Georgia, serif; font-style: italic; color: #2a7f8f; font-weight: 500;">Luton's
+                            proactive</span>
                         accountants?
                     </h2>
                     <p class="tax-compliance-body" style="font-size: 1.125rem; max-width: 480px;">
@@ -657,21 +822,25 @@
 
         <section id="testimonials" style="padding: 80px 20px; background: white;">
             <div class="container">
-                <h2 style="text-align: center; font-size: 2.25rem; color: var(--navy); margin-bottom: 56px;">What our clients say</h2>
+                <h2 style="text-align: center; font-size: 2.25rem; color: var(--navy); margin-bottom: 56px;">What our
+                    clients say</h2>
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
                     <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
                         <p>⭐⭐⭐⭐⭐</p>
-                        <p style="font-style: italic; margin: 16px 0;">"K & M Accountants are proactive, professional and always available. Their free advice has saved me thousands. Highly recommended!"</p>
+                        <p style="font-style: italic; margin: 16px 0;">"K & M Accountants are proactive, professional
+                            and always available. Their free advice has saved me thousands. Highly recommended!"</p>
                         <strong>James T., Luton</strong>
                     </div>
                     <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
                         <p>⭐⭐⭐⭐⭐</p>
-                        <p style="font-style: italic; margin: 16px 0;">"As a subcontractor, their CIS expertise is invaluable. Got my refund quickly and they explained everything clearly."</p>
+                        <p style="font-style: italic; margin: 16px 0;">"As a subcontractor, their CIS expertise is
+                            invaluable. Got my refund quickly and they explained everything clearly."</p>
                         <strong>Mark R., Bedfordshire</strong>
                     </div>
                     <div style="padding: 32px; border: 1px solid var(--border-color); border-radius: 12px;">
                         <p>⭐⭐⭐⭐⭐</p>
-                        <p style="font-style: italic; margin: 16px 0;">"Flexible hours, fixed fees, and they actually answer the phone. Naveen and the team are fantastic."</p>
+                        <p style="font-style: italic; margin: 16px 0;">"Flexible hours, fixed fees, and they actually
+                            answer the phone. Naveen and the team are fantastic."</p>
                         <strong>Sarah M., Dunstable</strong>
                     </div>
                 </div>
@@ -680,8 +849,10 @@
 
         <section style="background: var(--navy); color: white; text-align: center; padding: 80px 20px;">
             <div class="container">
-                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Ready to work with Luton's proactive accountants?</h2>
-                <p style="margin-bottom: 32px; opacity: 0.9;">Free initial consultation — no obligation. Let's talk about your business.</p>
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Ready to work with Luton's proactive accountants?
+                </h2>
+                <p style="margin-bottom: 32px; opacity: 0.9;">Free initial consultation — no obligation. Let's talk
+                    about your business.</p>
                 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                     <a href="#contact" class="btn" style="background: white; color: var(--navy);">Request a Callback</a>
                     <a href="#contact" class="btn btn-teal">Free Consultation</a>
@@ -690,36 +861,75 @@
         </section>
 
         <section id="contact" style="padding: 80px 20px; background: var(--light-grey);">
-            <div class="container" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center;">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 64px; align-items: center;">
                 <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-subtle);">
-                    <form onsubmit="event.preventDefault(); alert('Thank you! K & M Accountants will be in touch soon.');">
-                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name</label><input type="text" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
-                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Email</label><input type="email" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
-                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Phone</label><input type="tel" style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;"></div>
-                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">How can we help?</label><select style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
-                            <option>Limited Company Accounts</option>
-                            <option>Sole Trader Accounts</option>
-                            <option>Bookkeeping</option>
-                            <option>Payroll & CIS</option>
-                            <option>General Enquiry</option>
-                        </select></div>
-                        <div style="margin-bottom: 20px;"><label style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label><textarea style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; height: 120px;"></textarea></div>
+                    <form
+                        onsubmit="event.preventDefault(); alert('Thank you! K & M Accountants will be in touch soon.');">
+                        <div style="margin-bottom: 20px;"><label
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">Full Name</label><input
+                                type="text"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 20px;"><label
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">Email</label><input
+                                type="email"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 20px;"><label
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">Phone</label><input
+                                type="tel"
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                        </div>
+                        <div style="margin-bottom: 20px;"><label
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">How can we
+                                help?</label><select
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
+                                <option>Limited Company Accounts</option>
+                                <option>Sole Trader Accounts</option>
+                                <option>Bookkeeping</option>
+                                <option>Payroll & CIS</option>
+                                <option>General Enquiry</option>
+                            </select></div>
+                        <div style="margin-bottom: 20px;"><label
+                                style="display: block; margin-bottom: 8px; font-weight: 500;">Message</label><textarea
+                                style="width: 100%; padding: 12px; border: 1px solid var(--border-color); border-radius: 4px; height: 120px;"></textarea>
+                        </div>
                         <button type="submit" class="btn btn-navy" style="width: 100%;">Send Enquiry</button>
                     </form>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 32px; text-align: center;">
-                    <div><strong>📞 01582 943371</strong><p>07886 456674</p><p>info@kandmaccountants.co.uk</p></div>
-                    <div><strong>📍 55 Dewsbury Road, Luton</strong><p>Bedfordshire, LU3 2HH</p><p>Weekdays: 9am – 8pm</p><p>Saturday: 10am – 4pm</p></div>
-                    <div><span class="badge" style="background: var(--teal); color: white;">Free business record collection for local clients</span></div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <span style="color: var(--teal);">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </span>
+                        <strong>01582 943371</strong>
+                        <p>07886 456674</p>
+                        <p>info@kandmaccountants.co.uk</p>
+                    </div>
+                    <div><strong>📍 55 Dewsbury Road, Luton</strong>
+                        <p>Bedfordshire, LU3 2HH</p>
+                        <p>Weekdays: 9am – 8pm</p>
+                        <p>Saturday: 10am – 4pm</p>
+                    </div>
+                    <div><span class="badge" style="background: var(--teal); color: white;">Free business record
+                            collection for local clients</span></div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <p>© 2026 K & M Accountants. All rights reserved.</p>
-            <div style="display: flex; gap: 24px;"><a href="#" style="color: #a0aec0;">Privacy Policy</a><a href="#" style="color: #a0aec0;">Terms of Use</a></div>
+            <div style="display: flex; gap: 24px;"><a href="#" style="color: #a0aec0;">Privacy Policy</a><a href="#"
+                    style="color: #a0aec0;">Terms of Use</a></div>
         </div>
     </footer>
 
@@ -730,7 +940,7 @@
             else header.classList.remove('scrolled');
         });
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const targetId = this.getAttribute('href');
                 if (targetId === "#" || targetId === "") return;
                 const targetElement = document.querySelector(targetId);
